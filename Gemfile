@@ -3,15 +3,22 @@ ruby '2.0.0'
 #ruby-gemset=railstutorial_rails_4_0
 
 gem 'rails', '4.0.0'
+gem 'pg'
 
 group :development, :test do
-  gem 'sqlite3', '1.3.7'
   gem 'rspec-rails', '2.13.1'
+  gem 'guard-rspec', '2.5.0'
+  gem 'spork-rails', github: 'sporkrb/spork-rails'
+  gem 'guard-spork', '1.5.0'
+  gem 'childprocess', '0.3.6'
 end
 
 group :test do
-  gem 'selenium-webdriver'
+  gem 'selenium-webdriver' 
   gem 'capybara', '2.1.0'
+
+  # Uncomment this line on OS X.
+  gem 'growl', '1.0.3'
 end
 
 gem 'sass-rails', '4.0.0'
@@ -26,7 +33,7 @@ group :doc do
 end
 
 group :production do
-  gem 'pg', '0.15.1'
+  gem 'pg'
   gem 'rails_12factor', '0.0.2'
 end
 
